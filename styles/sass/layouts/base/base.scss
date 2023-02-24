@@ -12,4 +12,12 @@ html {
 
 body {
     background-color: $color-black;
+    height: 100vh;
+}
+
+button,
+button::after,
+button::before {
+    border: none;
+    background-color: transparent;
 }
