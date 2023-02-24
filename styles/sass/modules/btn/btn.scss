@@ -4,20 +4,26 @@
     height: 100%;
     width: 100%;
     text-transform: uppercase;
-    font-weight: bolder;
-    font-size: 2rem;
+    font-weight: 600;
+    font-size: 3rem;
+    cursor: pointer;
 }
 
 .btn{
     color: $color-white;
     background-color: $color-grey;
-    transition: .1s all ease-in;
+    transition: .2s all ease-in;
 
     &--dark{
         background-color: $color-dark-grey;
     }
 
     &:hover{
-        scale: 1.05;
+        background-color: rgba($color-white, 0.25);
+    }
+
+    &:active{
+        scale: 1;
+        background-color: rgba($color-dark-grey, 0.9);
     }
 }

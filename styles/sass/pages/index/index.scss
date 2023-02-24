@@ -24,14 +24,32 @@
 }
 
 .calc {
+    width: 100%;
+    max-width: 54.5rem;
 
     &__display{
+        color: $color-white;
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+        padding: 10rem 0;
+        gap: 2rem;
+    }
+
+    &__label{
+        &--history{
+            font-size: 5rem;
+            color: rgba($color-white, 0.9);
+        }
         
+        &--result{
+            font-size: 8.16rem;
+        }
     }
 
     &__buttons{
         display: grid;
-        grid-template-columns: repeat(4, 12.5rem);
+        grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(5, 8.5rem);
         grid-template-areas: 
         "btnCe btnC btnBack btnDivision"
@@ -42,7 +60,6 @@
         gap: 1rem;
     }
 
-    
     &__btn {
         &--ce{
             grid-area: btnCe;
@@ -52,7 +69,7 @@
             grid-area: btnC;
         }
 
-        &--back{
+        &--backspace{
             grid-area: btnBack;
         }
 
