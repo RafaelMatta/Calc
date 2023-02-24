@@ -1,0 +1,23 @@
+.btn,
+.btn::after,
+.btn::before{
+    height: 100%;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 2rem;
+}
+
+.btn{
+    color: $color-white;
+    background-color: $color-grey;
+    transition: .1s all ease-in;
+
+    &--dark{
+        background-color: $color-dark-grey;
+    }
+
+    &:hover{
+        scale: 1.05;
+    }
+}

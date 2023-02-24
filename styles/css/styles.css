@@ -1,3 +1,29 @@
+html {
+  font: 'Arial', sans-serif; }
+
+.btn,
+.btn::after,
+.btn::before {
+  height: 100%;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 2rem; }
+
+.btn {
+  color: #fff;
+  background-color: #333333;
+  transition: .1s all ease-in; }
+  .btn--dark {
+    background-color: #252525; }
+  .btn:hover {
+    scale: 1.05; }
+
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 20rem 0; }
+
 *,
 *::after,
 *::before {
@@ -9,4 +35,101 @@ html {
   font-size: 62.5%; }
 
 body {
-  background-color: #1a1a1a; }
+  background-color: #0e0e0e;
+  height: 100vh; }
+
+button,
+button::after,
+button::before {
+  border: none;
+  background-color: transparent; }
+
+.calc-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: #0e0e0e; }
+  .calc-wrapper::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    top: 50%;
+    z-index: -1;
+    height: calc(100% + 1rem);
+    transform: translateY(-50%);
+    background: linear-gradient(to right, #ff1b1b, #ffb71b, #50ff1b, #1bffff, #581bff, #ff1bd9, #ff1b1b) repeat;
+    background-size: 200%;
+    animation: gradientRotation 20s ease infinite; }
+
+.calc__buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 12.5rem);
+  grid-template-rows: repeat(5, 8.5rem);
+  grid-template-areas: "btnCe btnC btnBack btnDivision" "btn7 btn8 btn9 btnMultiply" "btn4 btn5 btn6 btnSubtract" "btn1 btn2 btn3 btnSum" "btnE btn0 btnDot btnEqual";
+  gap: 1rem; }
+
+.calc__btn--ce {
+  grid-area: btnCe; }
+
+.calc__btn--c {
+  grid-area: btnC; }
+
+.calc__btn--back {
+  grid-area: btnBack; }
+
+.calc__btn--division {
+  grid-area: btnDivision; }
+
+.calc__btn--multiply {
+  grid-area: btnMultiply; }
+
+.calc__btn--subtraction {
+  grid-area: btnSubtract; }
+
+.calc__btn--addition {
+  grid-area: btnSum; }
+
+.calc__btn--equal {
+  grid-area: btnEqual; }
+
+.calc__btn--dot {
+  grid-area: btnDot; }
+
+.calc__btn--0 {
+  grid-area: btn0; }
+
+.calc__btn--1 {
+  grid-area: btn1; }
+
+.calc__btn--2 {
+  grid-area: btn2; }
+
+.calc__btn--3 {
+  grid-area: btn3; }
+
+.calc__btn--4 {
+  grid-area: btn4; }
+
+.calc__btn--5 {
+  grid-area: btn5; }
+
+.calc__btn--6 {
+  grid-area: btn6; }
+
+.calc__btn--7 {
+  grid-area: btn7; }
+
+.calc__btn--8 {
+  grid-area: btn8; }
+
+.calc__btn--9 {
+  grid-area: btn9; }
+
+@keyframes gradientRotation {
+  0% {
+    background-position: 0 0; }
+  100% {
+    background-position: 200% 0; } }
