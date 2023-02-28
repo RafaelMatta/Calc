@@ -88,20 +88,28 @@ button::before {
     height: 30rem;
     gap: 2rem;
     overflow: hidden; }
+    
   .calc__label--history {
     font-size: 3rem;
     color: rgba(255, 255, 255, 0.9);
     white-space: nowrap;
     word-break: none; }
+    
   .calc__label--input {
     width: fit-content;
     font-size: 10rem;
     white-space: nowrap; }
+    
   .calc__buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 8.5rem);
-    grid-template-areas: "btnCe btnC btnBack btnDivision" "btn7 btn8 btn9 btnMultiply" "btn4 btn5 btn6 btnSubtract" "btn1 btn2 btn3 btnSum" "btn0 btnDot btnDot btnEqual";
+    grid-template-areas: "btnCe btnC btnBack btnDivision"
+ "btn7 btn8 btn9 btnMultiply"
+ "btn4 btn5 btn6 btnSubtract"
+ "btn1 btn2 btn3 btnSum"
+ "btn0 btnDot btnDot btnEqual";
+
     gap: 1rem; }
   .calc__btn--ce {
     grid-area: btnCe; }
