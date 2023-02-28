@@ -15,12 +15,22 @@
         z-index: -1;
         height: calc(100% + 1rem);
         transform: translateY(-50%);
-        background: linear-gradient(to right, 
+        background: linear-gradient(to left bottom, 
         #ff1b1b,#ffb71b, #50ff1b, #1bffff,
         #581bff, #ff1bd9, #ff1b1b) repeat;
         background-size: 200%;
-        animation: gradientRotation 20s ease infinite;
     }
+}
+
+.history-wrapper{
+    width: 100%;
+    overflow: scroll;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.history-wrapper::-webkit-scrollbar{
+    display: none;
 }
 
 .calc {
@@ -31,19 +41,25 @@
         color: $color-white;
         display: flex;
         flex-direction: column;
-        text-align: right;
-        padding: 10rem 0;
+        justify-content: center;
+        align-items: flex-end;
+        height: 30rem;
         gap: 2rem;
+        overflow: hidden;
     }
 
     &__label{
         &--history{
-            font-size: 5rem;
+            font-size: 3rem;
             color: rgba($color-white, 0.9);
+            white-space: nowrap;
+            word-break: none;
         }
         
-        &--result{
-            font-size: 8.16rem;
+        &--input{
+            width: fit-content;
+            font-size: 10rem;
+            white-space: nowrap;
         }
     }
 
@@ -56,7 +72,7 @@
         "btn7 btn8 btn9 btnMultiply"
         "btn4 btn5 btn6 btnSubtract"
         "btn1 btn2 btn3 btnSum"
-        "btnE btn0 btnDot btnEqual";
+        "btn0 btnDot btnDot btnEqual";
         gap: 1rem;
     }
 

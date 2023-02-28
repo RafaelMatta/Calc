@@ -9,33 +9,36 @@
             <div class="calc-wrapper">
                 <div class="calc">
                     <div class="calc__display">
-                        <div class="calc__label calc__label--history">0</div>
-                        <div class="calc__label calc__label--result">0</div>
+                        <div class="history-wrapper">
+                            <div class="calc__label calc__label--history" id="history">&nbsp;</div>
+                        </div>
+                        <div class="calc__label calc__label--input" id="input">0</div>
                     </div>
                     <div class="calc__buttons">
-                        <button class="btn"></button>
-                        <button class="btn btn--dark calc__btn--c">c</button>
-                        <button class="btn btn--dark calc__btn--backspace"><</button>
-                        <button class="btn btn--dark calc__btn--ce">ce</button>
-                        <button class="btn btn--dark calc__btn--division">/</button>
-                        <button class="btn btn--dark calc__btn--multiply">*</button>
-                        <button class="btn btn--dark calc__btn--subtraction">-</button>
-                        <button class="btn btn--dark calc__btn--addition">+</button>
-                        <button class="btn btn--dark calc__btn--equal">=</button>
+                        <button class="btn btn--c">c</button>
+                        <button class="btn btn--ce">ce</button>
+                        <button class="btn btn--backspace"><</button>
+                        <button class="btn btn--operator calc__btn--division">/</button>
+                        <button class="btn btn--operator calc__btn--multiply">*</button>
+                        <button class="btn btn--operator calc__btn--subtraction">-</button>
+                        <button class="btn btn--operator calc__btn--addition">+</button>
+                        <button class="btn calc__btn--equal">=</button>
                         <button class="btn calc__btn--dot">.</button>
-                        <button class="btn calc__btn--0">0</button>
-                        <button class="btn calc__btn--1">1</button>
-                        <button class="btn calc__btn--2">2</button>
-                        <button class="btn calc__btn--3">3</button>
-                        <button class="btn calc__btn--4">4</button>
-                        <button class="btn calc__btn--5">5</button>
-                        <button class="btn calc__btn--6">6</button>
-                        <button class="btn calc__btn--7">7</button>
-                        <button class="btn calc__btn--8">8</button>
-                        <button class="btn calc__btn--9">9</button>
+                        <button class="btn btn--number calc__btn--0">0</button>
+                        <button class="btn btn--number calc__btn--1">1</button>
+                        <button class="btn btn--number calc__btn--2">2</button>
+                        <button class="btn btn--number calc__btn--3">3</button>
+                        <button class="btn btn--number calc__btn--4">4</button>
+                        <button class="btn btn--number calc__btn--5">5</button>
+                        <button class="btn btn--number calc__btn--6">6</button>
+                        <button class="btn btn--number calc__btn--7">7</button>
+                        <button class="btn btn--number calc__btn--8">8</button>
+                        <button class="btn btn--number calc__btn--9">9</button>
                     </div>
                 </div>
             </div>
         </div>
+
+        <script src="js/main.js"></script>
     </body>
 </html>
