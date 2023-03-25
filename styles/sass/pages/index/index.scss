@@ -1,166 +1,161 @@
 .calc-wrapper {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    background-color: $color-black;
-
-    &::before{
-        position: absolute;
-        content: "";
-        width: 100%;
-        top: 50%;
-        z-index: -1;
-        height: calc(100% + 1rem);
-        transform: translateY(-50%);
-        background: linear-gradient(to left bottom, 
-        #ff1b1b,#ffb71b, #50ff1b, #1bffff,
-        #581bff, #ff1bd9, #ff1b1b) repeat;
-        background-size: 200%;
-    }
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  border-top: 5px solid $color-yellow;
+  border-bottom: 5px solid $color-yellow;
 }
 
-.history-wrapper{
-    width: 100%;
-    overflow: scroll;
-    display: flex;
-    flex-direction: row-reverse;
+.history-wrapper {
+  width: 100%;
+  overflow: scroll;
+  display: flex;
+  flex-direction: row-reverse;
 }
 
-.history-wrapper::-webkit-scrollbar{
-    display: none;
+.history-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.label-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .calc {
-    width: 100%;
-    max-width: 54.5rem;
+  height: 100%;
+  width: 100%;
+  padding: 8rem 0;
+  max-width: 54.5rem;
 
-    &__display{
-        color: $color-white;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-end;
-        height: 30rem;
-        gap: 2rem;
-        overflow: hidden;
+  &__display {
+    color: $color-white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    height: 40%;
+    gap: 2rem;
+    overflow: hidden;
+  }
+
+  &__label {
+    &--history {
+      font-size: 3rem;
+      color: rgba($color-white, 0.9);
+      white-space: nowrap;
+      word-break: none;
     }
 
-    &__label{
-        &--history{
-            font-size: 3rem;
-            color: rgba($color-white, 0.9);
-            white-space: nowrap;
-            word-break: none;
-        }
-        
-        &--input{
-            width: fit-content;
-            font-size: 10rem;
-            white-space: nowrap;
-        }
+    &--input {
+      width: fit-content;
+      font-size: 10rem;
+      white-space: nowrap;
+    }
+  }
+
+  &__buttons {
+    display: grid;
+    height: 60%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas:
+      "btnCe btnC btnBack btnDivision"
+      "btn7 btn8 btn9 btnMultiply"
+      "btn4 btn5 btn6 btnSubtract"
+      "btn1 btn2 btn3 btnSum"
+      "btn0 btnDot btnDot btnEqual";
+  }
+
+  &__btn {
+    &--ce {
+      grid-area: btnCe;
     }
 
-    &__buttons{
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(5, 8.5rem);
-        grid-template-areas: 
-        "btnCe btnC btnBack btnDivision"
-        "btn7 btn8 btn9 btnMultiply"
-        "btn4 btn5 btn6 btnSubtract"
-        "btn1 btn2 btn3 btnSum"
-        "btn0 btnDot btnDot btnEqual";
-        gap: 1rem;
+    &--c {
+      grid-area: btnC;
     }
 
-    &__btn {
-        &--ce{
-            grid-area: btnCe;
-        }
-
-        &--c{
-            grid-area: btnC;
-        }
-
-        &--backspace{
-            grid-area: btnBack;
-        }
-
-        &--division{
-            grid-area: btnDivision;
-        }
-
-        &--multiply{
-            grid-area: btnMultiply;
-        }
-
-        &--subtraction{
-            grid-area: btnSubtract;
-        }
-
-        &--addition{
-            grid-area: btnSum;
-        }
-
-        &--equal{
-            grid-area: btnEqual;
-        }
-        
-        &--dot{
-            grid-area: btnDot;
-        }
-        
-        &--0{
-            grid-area: btn0;
-        }
-        
-        &--1{
-            grid-area: btn1;
-        }
-        
-        &--2{
-            grid-area: btn2;
-        }
-        
-        &--3{
-            grid-area: btn3;
-        }
-        
-        &--4{
-            grid-area: btn4;
-        }
-        
-        &--5{
-            grid-area: btn5;
-        }
-        
-        &--6{
-            grid-area: btn6;
-        }
-        
-        &--7{
-            grid-area: btn7;
-        }
-        
-        &--8{
-            grid-area: btn8;
-        }
-        
-        &--9{
-            grid-area: btn9;
-        }
+    &--backspace {
+      grid-area: btnBack;
     }
+
+    &--division {
+      grid-area: btnDivision;
+    }
+
+    &--multiply {
+      grid-area: btnMultiply;
+    }
+
+    &--subtraction {
+      grid-area: btnSubtract;
+    }
+
+    &--addition {
+      grid-area: btnSum;
+    }
+
+    &--equal {
+      grid-area: btnEqual;
+    }
+
+    &--dot {
+      grid-area: btnDot;
+    }
+
+    &--0 {
+      grid-area: btn0;
+    }
+
+    &--1 {
+      grid-area: btn1;
+    }
+
+    &--2 {
+      grid-area: btn2;
+    }
+
+    &--3 {
+      grid-area: btn3;
+    }
+
+    &--4 {
+      grid-area: btn4;
+    }
+
+    &--5 {
+      grid-area: btn5;
+    }
+
+    &--6 {
+      grid-area: btn6;
+    }
+
+    &--7 {
+      grid-area: btn7;
+    }
+
+    &--8 {
+      grid-area: btn8;
+    }
+
+    &--9 {
+      grid-area: btn9;
+    }
+  }
 }
 
 @keyframes gradientRotation {
-    0% {
-        background-position: 0 0;
-    }
-    
-    100% {
-        background-position: 200% 0;
-    }
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
 }

@@ -12,21 +12,19 @@ html {
   cursor: pointer; }
 
 .btn {
-  color: #fff;
-  background-color: #333333;
-  transition: .2s all ease-in; }
-  .btn--dark {
-    background-color: #252525; }
+  color: #ffffff;
+  transition: 0.2s all ease-in;
+  background-color: #161c30; }
+  .btn--operator, .btn--equal {
+    background-color: #1e2748; }
   .btn:hover {
-    background-color: rgba(255, 255, 255, 0.25); }
-  .btn:active {
-    scale: 1;
-    background-color: rgba(37, 37, 37, 0.9); }
+    background-color: #ffd339;
+    color: #0d1224; }
 
 .container {
   width: 100%;
   height: 100%;
-  padding: 10rem 0; }
+  padding: 5rem 0; }
 
 *,
 *::after,
@@ -39,7 +37,7 @@ html {
   font-size: 62.5%; }
 
 body {
-  background-color: #0e0e0e;
+  background-color: #0d1224;
   height: 100vh; }
 
 button,
@@ -55,17 +53,8 @@ button::before {
   align-items: center;
   height: 100%;
   width: 100%;
-  background-color: #0e0e0e; }
-  .calc-wrapper::before {
-    position: absolute;
-    content: "";
-    width: 100%;
-    top: 50%;
-    z-index: -1;
-    height: calc(100% + 1rem);
-    transform: translateY(-50%);
-    background: linear-gradient(to left bottom, #ff1b1b, #ffb71b, #50ff1b, #1bffff, #581bff, #ff1bd9, #ff1b1b) repeat;
-    background-size: 200%; }
+  border-top: 5px solid #ffd339;
+  border-bottom: 5px solid #ffd339; }
 
 .history-wrapper {
   width: 100%;
@@ -76,41 +65,40 @@ button::before {
 .history-wrapper::-webkit-scrollbar {
   display: none; }
 
-.calc {
+.label-wrapper {
   width: 100%;
+  display: flex;
+  justify-content: flex-end; }
+
+.calc {
+  height: 100%;
+  width: 100%;
+  padding: 8rem 0;
   max-width: 54.5rem; }
   .calc__display {
-    color: #fff;
+    color: #ffffff;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    height: 30rem;
+    height: 40%;
     gap: 2rem;
     overflow: hidden; }
-    
   .calc__label--history {
     font-size: 3rem;
     color: rgba(255, 255, 255, 0.9);
     white-space: nowrap;
     word-break: none; }
-    
   .calc__label--input {
     width: fit-content;
     font-size: 10rem;
     white-space: nowrap; }
-    
   .calc__buttons {
     display: grid;
+    height: 60%;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(5, 8.5rem);
-    grid-template-areas: "btnCe btnC btnBack btnDivision"
- "btn7 btn8 btn9 btnMultiply"
- "btn4 btn5 btn6 btnSubtract"
- "btn1 btn2 btn3 btnSum"
- "btn0 btnDot btnDot btnEqual";
-
-    gap: 1rem; }
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas: "btnCe btnC btnBack btnDivision" "btn7 btn8 btn9 btnMultiply" "btn4 btn5 btn6 btnSubtract" "btn1 btn2 btn3 btnSum" "btn0 btnDot btnDot btnEqual"; }
   .calc__btn--ce {
     grid-area: btnCe; }
   .calc__btn--c {

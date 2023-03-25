@@ -1,29 +1,26 @@
 .btn,
 .btn::after,
-.btn::before{
-    height: 100%;
-    width: 100%;
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 3rem;
-    cursor: pointer;
+.btn::before {
+  height: 100%;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 3rem;
+  cursor: pointer;
 }
 
-.btn{
-    color: $color-white;
-    background-color: $color-grey;
-    transition: .2s all ease-in;
+.btn {
+  color: $color-white;
+  transition: 0.2s all ease-in;
+  background-color: #161c30;
 
-    &--dark{
-        background-color: $color-dark-grey;
-    }
+  &--operator,
+  &--equal {
+    background-color: $color-dark-blue;
+  }
 
-    &:hover{
-        background-color: rgba($color-white, 0.25);
-    }
-
-    &:active{
-        scale: 1;
-        background-color: rgba($color-dark-grey, 0.9);
-    }
+  &:hover {
+    background-color: $color-yellow;
+    color: $color-dark-blue--1;
+  }
 }

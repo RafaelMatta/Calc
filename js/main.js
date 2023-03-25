@@ -7,7 +7,7 @@ const btnCe= document.querySelector(".btn--ce");
 const btnBackspace = document.querySelector(".btn--backspace");
 const btnEqual = document.querySelector(".calc__btn--equal");
 const btnDot = document.querySelector(".calc__btn--dot");
-const displayWidth = document.querySelector(".calc__display").clientWidth;
+const displayWidth = document.querySelector(".label-wrapper").clientWidth;
 let resultFontSize = parseFloat(window.getComputedStyle(labelInput, null).getPropertyValue('font-size'));
 
 let lastInput = '';
