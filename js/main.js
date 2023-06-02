@@ -3,7 +3,7 @@ const labelHistory = document.getElementById("history");
 const btnNumbers = document.querySelectorAll(".btn--number");
 const btnOperators = document.querySelectorAll(".btn--operator");
 const btnC = document.querySelector(".btn--c");
-const btnCe= document.querySelector(".btn--ce");
+const btnCe = document.querySelector(".btn--ce");
 const btnBackspace = document.querySelector(".btn--backspace");
 const btnEqual = document.querySelector(".calc__btn--equal");
 const btnDot = document.querySelector(".calc__btn--dot");
@@ -34,11 +34,11 @@ btnOperators.forEach(btn => {
     });
 })
 
-btnNumbers.forEach( btn => {
+btnNumbers.forEach(btn => {
     btn.addEventListener('click', () => {
         if (lastInput == '=') clearAll();
 
-        if (labelInput.innerText === '0' || isLastInputAnOperator()){
+        if (labelInput.innerText === '0' || isLastInputAnOperator()) {
             labelInput.innerText = btn.innerText;
 
         } else {
@@ -53,12 +53,12 @@ btnEqual.addEventListener('click', () => {
     if (lastOperator == '') {
         labelHistory.innerHTML = `${labelInput.innerText} ${btnEqual.innerText}`
         result = +labelInput.innerText;
-    } else if(!isLastInputAnOperator()) {
+    } else if (!isLastInputAnOperator()) {
         labelHistory.innerHTML = `${lastNumber} ${lastOperator} ${labelInput.innerText} ${btnEqual.innerText}`
         lastNumber = +labelInput.innerText;
         calcLastOperation(+labelInput.innerText);
         labelInput.innerText = result;
-    } else{
+    } else {
         labelHistory.innerHTML = `${result} ${lastOperator} ${lastNumber} ${btnEqual.innerText}`
         calcLastOperation(lastNumber);
         labelInput.innerText = result;
@@ -71,6 +71,8 @@ btnDot.addEventListener('click', () => {
     if (labelInput.innerText.includes('.')) return;
 
     labelInput.innerText += '.';
+
+    changeTextSize();
 })
 
 btnC.addEventListener('click', () => {
@@ -105,8 +107,8 @@ const isLastInputAnOperator = function () {
 
 const changeTextSize = function () {
     resultFontSize = ((displayWidth * resultFontSize) / labelInput.clientWidth);
-    
-    if (resultFontSize > sizeLimit) 
+
+    if (resultFontSize > sizeLimit)
         resultFontSize = sizeLimit;
 
     labelInput.style.fontSize = `${resultFontSize}px`;
@@ -119,6 +121,7 @@ const changeOperator = function (operator) {
 const clearResult = function () {
     labelInput.innerHTML = '0';
     lastInput = '';
+    changeTextSize();
 }
 
 const clearAll = function () {
@@ -130,26 +133,26 @@ const clearAll = function () {
 }
 
 const calcLastOperation = function (inputValue) {
-    if (lastOperator == ''){ 
-        result = +labelInput.innerText; 
+    if (lastOperator == '') {
+        result = +labelInput.innerText;
     }
-    else{
+    else {
         selectOperation(lastOperator, inputValue);
     }
 }
 
 const selectOperation = function (operator, inputValue) {
     switch (operator) {
-        case "/": 
+        case "/":
             calculateDivision(inputValue);
             break;
-        case "*": 
+        case "*":
             calculateMultiply(inputValue);
             break;
-        case "-": 
+        case "-":
             calculateSubtraction(inputValue);
             break;
-        case "+": 
+        case "+":
             calculateSum(inputValue);
             break;
         default:
